@@ -1,0 +1,19 @@
+# Python temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment folders
+.venv/
+venv/
+ENV/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

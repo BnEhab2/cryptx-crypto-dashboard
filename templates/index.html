@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptX - Encryption Tool</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header with Project Name -->
+    <header class="header">
+        <h1 class="project-name">CryptX</h1>
+    </header>
+
+    <div class="container">
+        <!-- Encryption Panel -->
+        <div class="panel">
+            <h2>Encryption</h2>
+            <form id="encrypt-form">
+                <textarea id="plaintext" placeholder="Enter plaintext here..." required></textarea>
+
+                <!-- Key Selection Dropdown -->
+                <label for="encrypt-key-type">Select Key Type:</label>
+                <select id="encrypt-key-type" required>
+                    <!-- <option value="lcg">LCG Key</option> -->
+                    <option value="rsa">RSA Key</option>
+                    <option value="custom">Custom Key</option>
+                </select>
+
+                <!-- Custom Key Input (Hidden by Default) -->
+                <input type="text" id="encrypt-custom-key" placeholder="Enter custom key (hex)" style="display: none;">
+
+                <button type="button" id="encrypt-btn">Encrypt</button>
+            </form>
+            <div id="encrypt-result" class="result">
+                <strong>Result:</strong>
+                <p><strong>Ciphertext (Hex):</strong> <span id="encrypt-ciphertext"></span></p>
+                <p><strong>Encryption Key (Hex):</strong> <span id="encrypt-key"></span></p>
+                <p><strong>SHA-1 Hash of Plaintext:</strong> <span id="encrypt-sha1-hash"></span></p>
+            </div>
+        </div>
+
+        <!-- Decryption Panel -->
+        <div class="panel">
+            <h2>Decryption</h2>
+            <form id="decrypt-form">
+                <textarea id="ciphertext" placeholder="Enter ciphertext (hex) here..." required></textarea>
+                <input type="text" id="decrypt-key" placeholder="Enter decryption key (hex)" required>
+                <input type="text" id="decrypt-sha1-hash" placeholder="Enter SHA-1 hash of original plaintext" required>
+                <button type="button" id="decrypt-btn">Decrypt</button>
+            </form>
+            <div id="decrypt-result" class="result">
+                <strong>Result:</strong>
+                <p><strong>Plaintext:</strong> <span id="decrypt-plaintext"></span></p>
+                <p><strong>SHA-1 Hash Verification:</strong> <span id="decrypt-sha1-verification"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

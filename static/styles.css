@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text */
+    display: flex;
+    flex-direction: column; /* Stack header and container vertically */
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header with Project Name */
+.header {
+    width: 100%;
+    background-color: #1e1e1e; /* Slightly lighter dark gray */
+    padding: 1rem 2rem; /* Add padding to the header */
+    display: flex;
+    justify-content: flex-start; /* Align project name to the top-right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.project-name {
+    font-size: 2rem; /* Large font size for project name */
+    color: #bb86fc; /* Violet color for headings */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    display: flex;
+    gap: 4rem; /* Uniform spacing between panels */
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 2rem; /* Add space below the header */
+}
+
+.panel {
+    background: #1e1e1e; /* Slightly lighter dark gray for the main content */
+    padding: 3rem; /* Increased padding inside panels */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+    width: 50%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem; /* Increased space below the heading */
+    color: #bb86fc; /* Violet color for headings */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Uniform spacing between form elements */
+}
+
+textarea, input, select, button {
+    width: 100%;
+    padding: 1.2rem; /* Consistent padding inside inputs/buttons */
+    border: 2px solid #424242; /* Lighter dark gray border */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #2b2b2b; /* Darker background for inputs */
+    color: #e0e0e0; /* Light gray text */
+    transition: border-color 0.3s ease;
+    resize: none; /* Disable resizing for textarea */
+}
+
+button {
+    background-color: #bb86fc; /* Vibrant violet for buttons */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9c27b0; /* Darker violet on hover */
+}
+
+.result {
+    margin-top: 2rem; /* Increased space above the result */
+    padding: 1.5rem; /* Increased padding inside the result box */
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    display: none; /* Hidden by default */
+}
+
+/* Styles for SHA-1 Hash */
+.sha1-hash {
+    background-color: #1b5e20; /* Dark green background */
+    border: 1px solid #155724; /* Even darker green border */
+    color: #d4edda; /* Light green text */
+    padding: 1.2rem; /* Consistent padding */
+    border-radius: 8px;
+    margin-top: 1rem; /* Space above the hash */
+    white-space: pre-wrap; /* Preserve newlines in result */
+    font-family: monospace; /* Monospaced font for hashes */
+}
+
+.sha1-hash-label {
+    font-weight: bold;
+    color: #bb86fc; /* Violet color for labels */
+    margin-bottom: 0.5rem; /* Space below the label */
+}
+
+.sha1-verification {
+    background-color: #004d40; /* Dark teal for verification */
+    border: 1px solid #00332a; /* Even darker teal border */
+    color: #b2dfdb; /* Light teal text */
+    padding: 1.2rem; /* Consistent padding */
+    border-radius: 8px;
+    margin-top: 1rem; /* Space above the verification */
+    white-space: pre-wrap; /* Preserve newlines in result */
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .panel {
+        width: 100%;
+    }
+}
